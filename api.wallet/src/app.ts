@@ -15,6 +15,8 @@ import loadContainer from './container';
 
 const app: express.Application = express();
 
+app.use(express.json());
+
 //Container
 loadContainer(app);
 

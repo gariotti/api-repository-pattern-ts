@@ -36,6 +36,9 @@ export class SubscriptionService {
             originalEntry.code = entry.code;
             originalEntry.amount = entry.amount;
             originalEntry.cron = entry.cron;
+            
+            await this.subscriptionRepository.update(originalEntry);
+
         } else {
             throw new ApplicationException('User subscription not found.');
         }

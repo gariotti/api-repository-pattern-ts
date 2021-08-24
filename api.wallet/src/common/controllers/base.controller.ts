@@ -7,7 +7,7 @@ export abstract class BaseController {
         
             if (err instanceof ApplicationException) {
                 res.status(400);
-                res.send();
+                res.send(err.message);
             } else {
                 throw new Error(err);                
 

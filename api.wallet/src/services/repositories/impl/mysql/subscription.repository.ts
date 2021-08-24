@@ -51,7 +51,7 @@ export class SubscriptionMySQLRepository implements SubscriptionRepository{
     public async update(entry: Subscription): Promise<void> {
         const now = new Date();
         const [rows]: any[] = await connector.execute(            
-            'UPDATE wallet_subscription SET user_id=?, code=?, amount=?, cron=?, update_at=? WHERE id = ?',
+            'UPDATE wallet_subscription SET user_id=?, code=?, amount=?, cron=?, updated_at=? WHERE id = ?',
             [entry.user_id, entry.code, entry.amount, entry.cron, now, entry.id]
         );
     }
